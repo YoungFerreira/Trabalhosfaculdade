@@ -1,0 +1,1 @@
+instalar o venv utilizando o python -m venv venv dentro dessa pasta e utilize o pip install -r requirements.txt e apos rodar o app e clicar no ip do terminal mostrando o site
