@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Jogos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #7c3aed 100%);
+            color: #1f2937;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #1e1b4b;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: #6b7280;
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+
+        .welcome {
+            background: #f5f3ff;
+            border: 1px solid #ddd6fe;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 28px;
+            color: #5b21b6;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #4c1d95);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #4c1d95;
+            border: 2px solid #ddd6fe;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 24px rgba(124, 58, 237, 0.45);
+        }
+
+        .btn-secondary:hover {
+            background: #f5f3ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🎮</div>
+        <h1>Catálogo de Jogos</h1>
+        <p class="subtitle">Organize e consulte sua coleção de jogos favoritos</p>
+
+        {% if user %}
+        <div class="welcome">Olá, {{ user.username }}!</div>
+        {% endif %}
+
+        <div class="actions">
+            <a href="/cadastro" class="btn btn-primary">➕ Cadastrar novo jogo</a>
+            <a href="/viewCadastro" class="btn btn-secondary">📋 Ver catálogo</a>
+        </div>
+    </div>
+</body>
+</html>
